@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'components.dart';
+import 'drawer.dart';
 
 main() {
   runApp(const MyApp());
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
+        drawer: NavigationDrawerWidget(),
+        appBar: AppBar(  
           title: Text('Useless App'),
         ),
         body: Components(),
