@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import './menu.dart';
+import 'components.dart';
 
 main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Useless App'),
         ),
-        body: Menu(),
+        body: Components(),
       ),
     );
   }
