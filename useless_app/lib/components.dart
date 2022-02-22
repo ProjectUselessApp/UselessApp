@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use, prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
+import 'main.dart';
 
 class Components extends StatefulWidget {
   @override
@@ -17,20 +18,37 @@ class _ComponentControlState extends State<Components> {
     return Column(
       children: <Widget>[
         Container(
+          margin: EdgeInsets.only(top: 150.0),
           child: Center(
-            child: RaisedButton(
+            child: RaisedButton(  
               splashColor: Colors.amberAccent,
               color: Colors.orange,
               onPressed: () {
-                setState(() {
-                  //Mene noppapeli ikkunaan
-                });
+                Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Noppapeli()),
+                );
               },
               child: Text("Pelaa!"),
             ),
           ),
         ),
-        Container(child: Text("Pelaa noppapeliä!"))
+        Container(child: Text(_noppaPeli)),
+        Container(
+           margin: EdgeInsets.only(top: 10.0),
+          child: Center(
+            child: RaisedButton(  
+              splashColor: Colors.amberAccent,
+              color: Colors.orange,
+              onPressed: () {
+                setState(() {
+                  //Sää
+                });
+              },
+              child: Text("Katso sää!"),
+            ),
+          ),
+        ),
+        Container(child: Text("Katso sää!")),
       ],
     );
   }
