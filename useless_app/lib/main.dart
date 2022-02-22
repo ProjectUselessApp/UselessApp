@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'components.dart';
 import 'drawer.dart';
-
+import 'peli.dart';
 main() {
   runApp(const MyApp());
 }
@@ -34,7 +34,7 @@ class Noppapeli extends StatelessWidget {
         appBar: AppBar(
           title: Text('Useless App'),
         ),
-        body: Text("Toinen sivu"),
+        body: Peli(),
       ),
     );
   }
