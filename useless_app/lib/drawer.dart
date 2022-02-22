@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
-  final padding = EdgeInsets.symmetric(horizontal: 20, vertical: 20);
+  final padding = EdgeInsets.symmetric(horizontal: 20, vertical: 5);
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -16,23 +16,26 @@ class NavigationDrawerWidget extends StatelessWidget {
             child: Text('Drawer Header'),
           ),
           ListTile(
-            title: const Text('Item 1'),
+            title: const Text('Yle'),
             onTap: () async {
-              var url = "https://google.com/";
+              var url = "https://yle.fi/";
               if (await canLaunch(url)) {
                 await launch(url);
               } else {
-                throw "Failed to open LinkedIn";
+                throw "Failed to open yle";
               }
               Navigator.pop(context);
             },
           ),
           ListTile(
-            title: const Text('Item 2'),
-            onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
+            title: const Text('iltasanomat'),
+            onTap: () async {
+              var url = "https://iltasanomat.fi/";
+              if (await canLaunch(url)) {
+                await launch(url);
+              } else {
+                throw "Failed to open iltasanomat";
+              }
               Navigator.pop(context);
             },
           ),
