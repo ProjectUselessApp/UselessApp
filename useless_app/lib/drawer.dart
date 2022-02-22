@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20, vertical: 20);
@@ -17,10 +17,13 @@ class NavigationDrawerWidget extends StatelessWidget {
           ),
           ListTile(
             title: const Text('Item 1'),
-            onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
+            onTap: () async {
+              var url = "https://google.com/";
+              if (await canLaunch(url)) {
+                await launch(url);
+              } else {
+                throw "Failed to open LinkedIn";
+              }
               Navigator.pop(context);
             },
           ),
