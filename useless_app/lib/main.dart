@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'components.dart';
@@ -33,6 +35,11 @@ class Noppapeli extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text('Useless App'),
+          automaticallyImplyLeading: true,
+          leading: IconButton(icon: Icon(Icons.arrow_back),
+          onPressed:() => Navigator.pop(context, false),  //Back button
+          )
+
         ),
         body: Peli(),
       ),
