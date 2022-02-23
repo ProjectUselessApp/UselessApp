@@ -1,7 +1,4 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'components.dart';
 import 'drawer.dart';
 import 'peli.dart';
@@ -16,9 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: const Color(0x00030605),
         drawer: NavigationDrawerWidget(),
         appBar: AppBar(  
-          title: Text('Useless App'),
+          title: const Text('Useless App'),
         ),
         body: Components(),
       ),
@@ -32,14 +30,15 @@ class Noppapeli extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
       home: Scaffold(
+        backgroundColor: const Color(0x00030605),
         appBar: AppBar(
-          title: Text('Useless App'),
+          title: const Text('Useless App'),
           automaticallyImplyLeading: true,
-          leading: IconButton(icon: Icon(Icons.arrow_back),
+          leading: IconButton(icon: const Icon(Icons.arrow_back),
           onPressed:() => Navigator.pop(context, false),  //Back button
           )
-
         ),
         body: Peli(),
       ),

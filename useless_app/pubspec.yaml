@@ -35,6 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   url_launcher: ^6.0.20
+  fluttertoast: ^8.0.8
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +69,7 @@ flutter:
      - assets/dice_6.png
      - assets/Noppa.gif
      - assets/space_background.jpg
+     - assets/Falling_money.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

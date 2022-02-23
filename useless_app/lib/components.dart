@@ -2,6 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'main.dart';
+import 'dart:convert';
+import 'dart:io';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Components extends StatefulWidget {
   @override
@@ -13,6 +16,29 @@ class Components extends StatefulWidget {
 class _ComponentControlState extends State<Components> {
   final String _noppaPeli = "Pelaa Noppapeliä!";
 
+ 
+  void Weather() async {
+  var request = await HttpClient()
+      .getUrl(Uri.parse('http://weather.willab.fi/weather.xml'));
+  request.persistentConnection = false;
+  request.followRedirects = true;
+  var response = await request.close();
+
+  await for (var contents in response.transform(Utf8Decoder())) {
+    final regExp = RegExp(r".*tempnow.*");
+    final temperature = regExp.stringMatch(contents).toString();
+    List<String> temperatureParts = temperature.split(RegExp(r"[<>]"));
+    
+    Fluttertoast.showToast(
+      msg: "Linnanmaan sää: " + temperatureParts[2],
+      toastLength: Toast.LENGTH_LONG,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIosWeb: 2,
+      fontSize: 16.0,
+    );
+
+  }
+}
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -40,15 +66,18 @@ class _ComponentControlState extends State<Components> {
               splashColor: Colors.amberAccent,
               color: Colors.orange,
               onPressed: () {
-                setState(() {
-                  //Sää
-                });
+                //Opens a Toast window with Temperature
+                Weather();
               },
               child: Text("Katso sää!"),
             ),
           ),
         ),
         Container(child: Text("Katso sää!")),
+         Container(
+        margin: EdgeInsets.only(top: 40.0),
+        child: Image.asset("assets/Falling_money.gif"),
+        ),
       ],
     );
   }
