@@ -58,7 +58,7 @@ class _ComponentControlState extends State<Components> {
             ),
           ),
         ),
-        Container(child: Text(_noppaPeli)),
+        Container(child: Text(_noppaPeli, style: TextStyle(color: Colors.white))),
         Container(
            margin: EdgeInsets.only(top: 10.0),
           child: Center(
@@ -73,7 +73,7 @@ class _ComponentControlState extends State<Components> {
             ),
           ),
         ),
-        Container(child: Text("Katso sää!")),
+        Container(child: Text("Katso sää!", style: TextStyle(color: Colors.white))),
          Container(
         margin: EdgeInsets.only(top: 40.0),
         child: Image.asset("assets/Falling_money.gif"),
