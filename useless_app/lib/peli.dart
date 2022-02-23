@@ -12,29 +12,24 @@ class Peli extends StatefulWidget {
 }
 
 class _PeliControlState extends State<Peli> {
-  
-  static var listImages = [
-      "assets/dice_1.png",
-      "assets/dice_2.png",
-      "assets/dice_3.png",
-      "assets/dice_4.png",
-      "assets/dice_5.png",
-      "assets/dice_6.png"
-  ];
+  int dice = Random().nextInt(6) + 1;
 
-  static var _random = Random();
-  var imageToShow = listImages[_random.nextInt(listImages.length)];
+  void Dice() {
+    setState(() {
+      dice = Random().nextInt(6) + 1;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(
-          margin: EdgeInsets.only(top: 50.0),
-          child: Center( 
-          child: Image.asset(imageToShow.toString(), width: 400, height: 446),
-          )
-        )
+        Container(child: Image.asset("assets/dice_$dice.png")),
+        RaisedButton(
+            child: Text("Heitä noppaa", textScaleFactor: 2),
+            onPressed: () {
+              Dice();
+            })
       ],
     );
   }
