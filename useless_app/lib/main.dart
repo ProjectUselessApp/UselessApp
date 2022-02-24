@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'components.dart';
 import 'drawer.dart';
 import 'peli.dart';
+
 main() {
   runApp(const MyApp());
 }
@@ -14,11 +15,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: const Color(0x00030605),
-        drawer: NavigationDrawerWidget(),
-        appBar: AppBar(  
+        drawer: const NavigationDrawerWidget(),
+        appBar: AppBar(
           title: const Text('Useless App'),
         ),
-        body: Components(),
+        body: const Components(),
       ),
     );
   }
@@ -30,17 +31,16 @@ class Noppapeli extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
       home: Scaffold(
         backgroundColor: const Color(0x00030605),
         appBar: AppBar(
-          title: const Text('Useless App'),
-          automaticallyImplyLeading: true,
-          leading: IconButton(icon: const Icon(Icons.arrow_back),
-          onPressed:() => Navigator.pop(context, false),  //Back button
-          )
-        ),
-        body: Peli(),
+            title: const Text('Useless App'),
+            automaticallyImplyLeading: true,
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () => Navigator.pop(context, false), //Back button
+            )),
+        body: const Peli(),
       ),
     );
   }

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
-  final padding = EdgeInsets.symmetric(horizontal: 20, vertical: 5);
+  final padding = const EdgeInsets.symmetric(horizontal: 20, vertical: 5);
+
+  const NavigationDrawerWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -13,7 +15,7 @@ class NavigationDrawerWidget extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
-            child: Text('Drawer Header'),
+            child: Text('Uutiset', textScaleFactor: 2),
           ),
           ListTile(
             title: const Text('Yle'),

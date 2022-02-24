@@ -67,8 +67,6 @@ flutter:
      - assets/dice_4.png
      - assets/dice_5.png
      - assets/dice_6.png
-     - assets/Noppa.gif
-     - assets/space_background.jpg
      - assets/Falling_money.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
